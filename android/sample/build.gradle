@@ -30,6 +30,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 //    implementation project(path: ':luakit')
     implementation project(path: ':library')
-//    compile 'com.github.fluayy:luaYoga:master-SNAPSHOT'
-
+//    implementation 'com.github.fluayy:luayoga:master-SNAPSHOT'
 }

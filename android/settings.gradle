@@ -1,3 +1,4 @@
-include ':sample', ':library' // , ':luakit', ':lib_chromium'
+include ':sample' , ':luayoga' // , ':luakit', ':lib_chromium'
+project(':luayoga').projectDir = new File('./library')
 //project(':luakit').projectDir = new File('AndroidFrameWork/luakit')
 //project(':lib_chromium').projectDir = new File('AndroidFrameWork/lib_chromium')
