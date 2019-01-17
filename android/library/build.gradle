@@ -16,6 +16,13 @@ android {
 
     }
 
+    sourceSets {
+        main {
+            java.srcDirs += ['../AndroidFrameWork/luakit/src/main/java', '../AndroidFrameWork/lib_chromium/src/main/java']
+//            res.srcDirs = [res.srcDirs, '../AndroidFrameWork/luakit/src/main/res']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -35,7 +42,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(path: ':luakit')
+//    implementation project(path: ':luakit')
 }
 
 task sourcesJar(type: Jar) {
@@ -43,15 +50,15 @@ task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.sourceFiles
 }
 
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
 
 task classesJar(type: Jar) {
     from "$buildDir/intermediates/classes/release"
@@ -59,6 +66,6 @@ task classesJar(type: Jar) {
 
 artifacts {
     archives classesJar
-    archives javadocJar
+//    archives javadocJar
     archives sourcesJar
 }
